@@ -265,4 +265,65 @@ public class TraitementResponsable
         }
         return jspRetour;
     }
+
+    public String traitementModifAdherent(HttpServletRequest request)
+    {
+        String jspRetour;
+
+        Adherent adherent;
+        String nomAdherent;
+        String prenomAdherent;
+        
+
+        HttpSession session = request.getSession();
+
+        AccesBase accesBase;
+        AdherentDAO adherentDAO;
+        // SalleDAO salleDAO;
+        //CoachDAO coachDAO;
+
+        nomAdherent = request.getParameter("nomAdherent");
+        prenomAdherent = request.getParameter("prenomAdherent");
+
+        accesBase = new AccesBase(base);
+
+        try
+        {
+            accesBase.getConnection();
+            adherentDAO = new AdherentDAO(accesBase);
+           // salleDAO = new SalleDAO(accesBase);
+            //coachDAO = new CoachDAO(accesBase);
+
+            try
+            {
+              
+                adherent = new Adherent();
+                adherent.setNom(nomAdherent);
+                adherent.setPrenom(prenomAdherent);
+                adherentDAO.lire(adherent);
+
+//                vSalle = salleDAO.lireListe();
+//                vCoach = coachDAO.lireListe();
+
+                jspRetour = "/jspResponsableAdherentModify.jsp";
+                session.setAttribute("message", "Les champs précédés d'une * sont obligatoires");
+                session.setAttribute("adherent", adherent);
+
+            }
+           
+            finally
+            {
+                accesBase.closeConnection();
+            }
+        }
+        catch (SQLException e)
+        {
+            jspRetour = "/jspResponsableAdherentModifier.jsp";
+            session.setAttribute("message", e.getMessage());
+            session.setAttribute("nomAdherent", nomAdherent);
+            session.setAttribute("choixAction", "modification");
+        }
+
+        return jspRetour;
+   }
 }

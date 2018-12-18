@@ -20,8 +20,9 @@ Adherent adherent = (Adherent) session.getAttribute("adherent");
     <body>
         <div><jsp:include page ="jspBandeauResponsableAdherent.jsp" /> </div>
         <div id="imageResponsable">
+            <fieldset>
         <h2>
-            Enregistrement de l'adhrent <%= adherent.getNom()%> effectué
+            Enregistrement de l'adherent <%= adherent.getNom()%> <%= adherent.getPrenom()%> effectué
         </h2>
 
         <br />
@@ -30,31 +31,32 @@ Adherent adherent = (Adherent) session.getAttribute("adherent");
             Récapitulatif des données entrées
         </h2>
         <p>
-            <%= adherent.getNom() %>
+           Nom: <%= adherent.getNom() %>
         </p>
          <p>
-            <%= adherent.getPrenom() %>
+            Prenom: <%= adherent.getPrenom() %>
         </p>
          <p>
-            <%= adherent.getEmail()%>
+            Email: <%= adherent.getEmail()%>
         </p>
          <p>
-            <%= adherent.getTelephone()%>
+           Telephone: <%= adherent.getTelephone()%>
         </p>
         <p>
-            <%= adherent.getAdresse()%>
+           Adresse: <%= adherent.getAdresse()%>
         </p>
         <p>
-            <%= adherent.getCodePostal()%> 
+            Code Postale: <%= adherent.getCodePostal()%> 
         </p>
         <p>
-            <%= adherent.getVille()%>
+            Ville: <%= adherent.getVille()%>
         </p>
         
 
         <p>
-            <a href="ServletControleur?idEcran=4">Retour au menu principal</a>
+            <a href="ServletControleur?idEcran=22">Retour au menu principal</a>
         </p>
+        </fieldset>
         </div>
     </body>
 </html>

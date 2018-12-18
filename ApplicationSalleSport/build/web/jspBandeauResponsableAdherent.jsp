@@ -17,7 +17,7 @@
             <ul>
                 <li>   <img src="images/Capture.PNG" width="250" height="100" alt=""/></li>
                 <li> <a name ="choixAction" href="ServletControleur?idEcran=7&choixAction=ResponsableAdherentAjouter">Ajouter</a></li>
-                <li> <a name ="choixAction" href="">Modifier</a></li>
+                <li> <a name ="choixAction" href="ServletControleur?idEcran=7&choixAction=ResponsableAdherentModifier">Modifier</a></li>
                 <li> <a name ="choixAction" href="">Supprimer</a></li>
                 
             </ul>

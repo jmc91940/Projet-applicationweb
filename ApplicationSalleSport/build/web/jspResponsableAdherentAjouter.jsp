@@ -7,7 +7,7 @@
     
     Adherent adherent = (Adherent) session.getAttribute("adherent");
     adherent= new Adherent();
-    String message = (String) session.getAttribute("message");
+    //String message = (String) session.getAttribute("message");
     String valueInput ="";  
  
 %>
@@ -33,7 +33,7 @@
 
                 <div class="divSaisieModif">
                    
-                    <label for="nom">Nom :</label>
+                    <label for="nom">Nom *:</label>
                     <input type="text" 
                            name="nom" 
                            value="<%=valueInput%>" 
@@ -44,7 +44,7 @@
 
                 <div class="divSaisieModif">
                    
-                    <label for="prenom">prenom :</label>
+                    <label for="prenom">prenom *:</label>
                     <input type="text" 
                            name="prenom" 
                            value="<%=valueInput%>"
@@ -54,7 +54,7 @@
                 </div>
                 <div class="divSaisieModif">
                     
-                    <label for="email">email :</label>
+                    <label for="email">email *:</label>
                     <input type="text" 
                            name="email" 
                            value="<%=valueInput%>"
@@ -65,7 +65,7 @@
                            
                     <div class="divSaisieModif">
                     
-                    <label for="telephone">telephone :</label>
+                    <label for="telephone">telephone *:</label>
                     <input type="text" 
                            name="telephone" 
                            value="<%=valueInput%>"
@@ -75,7 +75,7 @@
                 </div>
                            <div class="divSaisieModif">
                    
-                    <label for="adresse">adresse :</label>
+                    <label for="adresse">adresse *:</label>
                     <input type="text" 
                            name="adresse" 
                            value="<%=valueInput%>"
@@ -86,7 +86,7 @@
 
                     <div class="divSaisieModif">
                    
-                    <label for="codePostal">code postale :</label>
+                    <label for="codePostal">code postale *:</label>
                     <input type="text" 
                            name="codePostal" 
                            value="<%=valueInput%>"
@@ -96,7 +96,7 @@
                 </div>
                   <div class="divSaisieModif">
                    
-                    <label for="ville">ville:</label>
+                    <label for="ville">ville *:</label>
                     <input type="text" 
                            name="ville" 
                            value="<%=valueInput%>"
@@ -125,7 +125,7 @@
             <br />
             <br />
             <br />
-            <p id=message><%=message%></p>
+            <p id=message>les champs précédés d'une * sont obligatoires</p>
         </div>
                         </div>
     </body>

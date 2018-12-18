@@ -25,7 +25,7 @@
                 <li> <a  name= "choixAction" value = "Evenement" href="ServletControleur?idEcran=1&choixAction=Evenement">Evenements</a></li>
                 <li> <a href="">Contact</a></li>
              <div id="connect">
-                 <a href="">Login</a>
+                 <a name= "choixAction" value = "Login" href="ServletControleur?idEcran=1&choixAction=Login">Login</a>
             </div>
              </ul>
            

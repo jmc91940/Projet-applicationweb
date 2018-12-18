@@ -15,7 +15,7 @@
 
 <html>
     <head>
-        <title>Modification d'un cours</title>
+        <title  >Modification d'un cours</title>
         <meta http-equiv="Content-Type"
               content="text/html; charset=utf-8" />
         <link rel="stylesheet" 
@@ -28,7 +28,7 @@
         <div id="imageResponsable">
         <form action="ServletControleur?idEcran=9" method="post">
             <fieldset>
-                <legend>
+                <legend style="color:orange">
                     Modification du cours <%= cours.getLibelle()%>
                 </legend>
 
@@ -68,7 +68,7 @@
                 
 
                 <div class="divSaisieModif">
-                    <label for="coach">Id Coach :</label>
+                    <label for="coach">Identifiant Coach :</label>
                     <select name="coach" id="coach">
                     <%  if (cours.getIdCoach()== null)
                         {
@@ -110,7 +110,7 @@
                     </select>
                     
                     <div class="divSaisieModif">
-                    <label for="salle">Id Salle :</label>
+                    <label for="salle">Identifiant Salle :</label>
                     <select name="salle" id="salle">
                      
                     <%  if (cours.getIdSalle()== null)

@@ -31,16 +31,16 @@ Cours cours = (Cours) session.getAttribute("cours");
             Récapitulatif des données entrées
         </h2>
         <p>
-            <%= cours.getLibelle()%>
+            Nom du cours : <%= cours.getLibelle()%>
         </p>
          <p>
-            <%= cours.getDuree()%>
+            Durée (en minute) :<%= cours.getDuree()%>
         </p>
          <p>
-             <%= cours.getIdCoach()%>
+            Identifiant du coach: <%= cours.getIdCoach()%>
         </p>
          <p>
-            <%= cours.getIdSalle()%>
+           Identifiant de la salle: <%= cours.getIdSalle()%>
         </p>
         
          <p>

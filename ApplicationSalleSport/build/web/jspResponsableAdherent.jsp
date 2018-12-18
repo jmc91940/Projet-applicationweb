@@ -129,7 +129,7 @@
             </tbody>
         </table> 
             <p>
-            <a name="choixAction"  href="ServletControleur?idEcran=6">Retour au menu cours</a>
+            <a name="choixAction"  href="ServletControleur?idEcran=22">Retour au menu cours</a>
         </p>
     </div>
     </body>

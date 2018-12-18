@@ -114,7 +114,14 @@ public class ServletControleur extends HttpServlet {
                     }
                     else
                     {
+                        if (choixAction.compareTo("Login") == 0)
+                    {
+                        jsp = "/jspResponsable.jsp";
+                    }
+                    else
+                    {
                         jsp = "/jspAccueil.jsp";
+                    }
                     }
                 }
                 break;
@@ -224,6 +231,7 @@ public class ServletControleur extends HttpServlet {
                     
                 }
                 break;
+                
                 case 7:
                 choixAction = request.getParameter("choixAction");
 
@@ -234,9 +242,9 @@ public class ServletControleur extends HttpServlet {
                 }
                else
                 {
-                    if (choixAction.compareTo("ResponsableCoursModifier") == 0)
+                    if (choixAction.compareTo("ResponsableAdherentModifier") == 0)
                     {
-                        jsp="/jspResponsableCoursModifier.jsp";
+                        jsp="/jspResponsableAdherentModifier.jsp";
                     }
                     else
                     {
@@ -265,6 +273,37 @@ public class ServletControleur extends HttpServlet {
                 if (choixAction.compareTo("Enregistrer") == 0)
                 {
                     jsp = traitementModification.enregModifCours(request);
+                    //jsp = traitementCreation.annulationAjout(request);
+                }
+                else
+                {
+                    jsp = "/jspErreur.jsp";
+                }
+                break;
+                
+                case 10:
+                choixAction = request.getParameter("choixAction");
+
+                if (choixAction.compareTo("Envoyer") == 0)
+                {
+                    jsp = traitementResponsable.traitementModifAdherent(request);
+             
+                }
+               else
+                {
+                  
+                        jsp = "/jspErreur.jsp";
+                    
+                }
+                
+                break;
+                
+                case 11:
+                choixAction = request.getParameter("choixAction");
+
+                if (choixAction.compareTo("Enregistrer") == 0)
+                {
+                    jsp = traitementModification.enregModifAdherent(request);
                     //jsp = traitementCreation.annulationAjout(request);
                 }
                 else

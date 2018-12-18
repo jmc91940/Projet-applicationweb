@@ -3,20 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/src/java/controller/TraitementModification.java</file>
             <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspRecapModifCours.jsp</file>
+            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/src/java/controller/TraitementModification.java</file>
+            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspResponsableAdherentAjouter.jsp</file>
             <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/miseEnPage.css</file>
+            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspRecapModifAdherent.jsp</file>
             <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/src/java/controller/ServletControleur.java</file>
-            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspAccueil.jsp</file>
-            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspBandeauResponsable.jsp</file>
             <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspResponsableAdherent.jsp</file>
-            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspCoursPlanning.jsp</file>
-            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspResponsableCours.jsp</file>
-            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspCours.jsp</file>
-            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/index.jsp</file>
+            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspResponsableAdherentModify.jsp</file>
+            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspResponsableAdherentModifier.jsp</file>
+            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspResponsable.jsp</file>
+            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/src/java/controller/TraitementCreation.java</file>
+            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspResponsableCoursModify.jsp</file>
+            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/src/java/controller/TraitementAccueil.java</file>
+            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspBandeau.jsp</file>
             <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspRecapCreationAdherent.jsp</file>
             <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspResponsableCoursModifier.jsp</file>
+            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/src/java/controller/TraitementResponsable.java</file>
             <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspBandeauResponsableAdherent.jsp</file>
+            <file>file:/C:/Users/User/Desktop/Projet/new/ApplicationSalleSport/web/jspBandeauCours.jsp</file>
         </group>
     </open-files>
 </project-private>
