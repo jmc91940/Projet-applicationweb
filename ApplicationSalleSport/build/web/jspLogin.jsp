@@ -12,10 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="loginprocess.jsp" method="post">
-            Login:<input type="text" name="login"/><br/><br/>
-            Password<input type="password" name="motDePasse"/><br/><br/>
-            <input type="submit" value="envoi"/>
+        
+        <form action="ServletControleur?idEcran=12" method="post">
+           <fieldset>
+            Identifiant:<input type="text" name="identifiant"/><br/><br/>
+            Password:<input type="password" name="motDePasse"/><br/><br/>
+            <input type="submit" name="choixAction" value="Login"/>
+        </fieldset>  
         </form>
     </body>
 </html>

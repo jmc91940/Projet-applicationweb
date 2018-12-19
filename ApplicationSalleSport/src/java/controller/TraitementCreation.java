@@ -68,63 +68,40 @@ public class TraitementCreation
         AccesBase accesBase;
         AdherentDAO adherentDAO;
 
-       // adherent = (Adherent) session.getAttribute("adherent");
-        //vSect = (Vector<Secteur>) session.getAttribute("vSect");
+       
 
         String nom = request.getParameter("nom");
         nom = nom.trim();
-        if (nom.compareTo("") == 0)
-        {
-            nom = null;
-        }
+
         String prenom = request.getParameter("prenom");
         prenom = prenom.trim();
-        if (prenom.compareTo("") == 0)
-        {
-            prenom = null;
-        }
+
        String email = request.getParameter("email");
         email = email.trim();
         if (email.compareTo("") == 0)
         {
             email = null;
         }
+        
         String telephone = request.getParameter("telephone");
         telephone = telephone.trim();
         if (telephone.compareTo("") == 0)
         {
             telephone = null;
         }
+        
         String adresse = request.getParameter("adresse");
         adresse = adresse.trim();
-        if (adresse.compareTo("") == 0)
-        {
-            adresse = null;
-        }
 
         String codePostal = request.getParameter("codePostal");
         codePostal = codePostal.trim();
-        if (codePostal.compareTo("") == 0)
-        {
-            codePostal = null;
-        }
 
         String ville = request.getParameter("ville");
         ville = ville.trim();
-        if (ville.compareTo("") == 0)
-        {
-            ville = null;
-        }
-
-       /* String stringCodeSecteur = request.getParameter("codeSecteur");
-        Integer codeSecteur = null;
-        if (stringCodeSecteur.compareTo("") != 0)
-        {
-            codeSecteur = new Integer(stringCodeSecteur);
-        }*/
+  
 
 // --------------------------------------------------------------------------
-// Modification de l'objet contact
+// Modification de l'objet adherent
 // --------------------------------------------------------------------------
 
         adherent.setNom(nom);
@@ -145,19 +122,20 @@ public class TraitementCreation
             try
             {
                 int retour = adherentDAO.creer(adherent);
-                if (retour != 0)
+                if (retour == 1)
                 {
                     jspRetour = "/jspRecapCreationAdherent.jsp";
                     session.setAttribute("adherent", adherent);
+                            
+                    
                 }
                 else
                 {
-                    jspRetour = "/jspModif.jsp";
-                    /*session.setAttribute("message", "Le contact "
-                                         + contact.getNumero()
-                                         + " a été supprimé");
-                    session.setAttribute("contact", contact);
-                    session.setAttribute("vSect", vSect);*/
+                    jspRetour = "/jspResponsableAdherentAjouter.jsp";
+                    session.setAttribute("adherent", adherent );
+                    session.setAttribute("message", "!!Attention adhérent déjà existant" );
+                    
+                                         
                 }
             }
             finally

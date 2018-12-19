@@ -5,6 +5,7 @@
 
 <% 
 Adherent adherent = (Adherent) session.getAttribute("adherent");
+
 %>
 
 <html>
@@ -21,8 +22,8 @@ Adherent adherent = (Adherent) session.getAttribute("adherent");
         <div><jsp:include page ="jspBandeauResponsableAdherent.jsp" /> </div>
         <div id="imageResponsable">
             <fieldset>
-        <h2>
-            Enregistrement de l'adherent <%= adherent.getNom()%> <%= adherent.getPrenom()%> effectué
+        <h2 style>
+           L'adhérent <%= adherent.getNom()%> <%= adherent.getPrenom()%> a bien été créé.
         </h2>
 
         <br />

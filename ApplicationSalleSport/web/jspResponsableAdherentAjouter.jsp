@@ -4,10 +4,7 @@
 <!DOCTYPE html>
 
 <% 
-    
-    Adherent adherent = (Adherent) session.getAttribute("adherent");
-    adherent= new Adherent();
-    //String message = (String) session.getAttribute("message");
+    String message = (String) session.getAttribute("message");
     String valueInput ="";  
  
 %>
@@ -27,14 +24,15 @@
         <div id="imageResponsable">
         <form action="ServletControleur?idEcran=8" method="post">
             <fieldset>
-                <legend>
+                <legend style="background-color: #DDFFFF">
                     Création d'un adherent
                 </legend>
 
                 <div class="divSaisieModif">
                    
                     <label for="nom">Nom *:</label>
-                    <input type="text" 
+                    <input type="text"
+                           required
                            name="nom" 
                            value="<%=valueInput%>" 
                            size="20" 
@@ -46,6 +44,7 @@
                    
                     <label for="prenom">prenom *:</label>
                     <input type="text" 
+                           required
                            name="prenom" 
                            value="<%=valueInput%>"
                            size="30" 
@@ -54,8 +53,8 @@
                 </div>
                 <div class="divSaisieModif">
                     
-                    <label for="email">email *:</label>
-                    <input type="text" 
+                    <label for="email">email :</label>
+                    <input type="email" 
                            name="email" 
                            value="<%=valueInput%>"
                            size="30" 
@@ -65,7 +64,7 @@
                            
                     <div class="divSaisieModif">
                     
-                    <label for="telephone">telephone *:</label>
+                    <label for="telephone">telephone :</label>
                     <input type="text" 
                            name="telephone" 
                            value="<%=valueInput%>"
@@ -76,7 +75,8 @@
                            <div class="divSaisieModif">
                    
                     <label for="adresse">adresse *:</label>
-                    <input type="text" 
+                    <input type="text"
+                           required
                            name="adresse" 
                            value="<%=valueInput%>"
                            size="30" 
@@ -88,6 +88,7 @@
                    
                     <label for="codePostal">code postale *:</label>
                     <input type="text" 
+                           required
                            name="codePostal" 
                            value="<%=valueInput%>"
                            size="30" 
@@ -97,14 +98,18 @@
                   <div class="divSaisieModif">
                    
                     <label for="ville">ville *:</label>
-                    <input type="text" 
+                    <input type="text"
+                           required
                            name="ville" 
                            value="<%=valueInput%>"
                            size="30" 
                            maxlength="30" 
                            id="ville" />                
                 </div>
+                        
+                           <p >les champs précédés d'une * sont obligatoires</p>
 
+                           <p><%=message%></p>
   
             </fieldset>
 
@@ -125,7 +130,8 @@
             <br />
             <br />
             <br />
-            <p id=message>les champs précédés d'une * sont obligatoires</p>
+            
+            
         </div>
                         </div>
     </body>

@@ -95,6 +95,13 @@
                         <%= cours.getCoach().getNom() %>
                         <% } %>
                     </td>
+                    
+                    <td>
+                        <% if (cours.getSalle().getLibelle()!= null)
+                      {%>
+                        <%= cours.getSalle().getLibelle() %>
+                        <% } %>
+                    </td>
                    
                 </tr>
                
@@ -106,7 +113,7 @@
             </tbody>
         </table> 
             <p>
-            <a name="choixAction"  href="ServletControleur?idEcran=6">Retour au menu cours</a>
+            <a name="choixAction"  href="ServletControleur?idEcran=20">Retour au menu principale</a>
         </p>
     </div>
     </body>

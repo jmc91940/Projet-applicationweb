@@ -64,7 +64,7 @@ public class ServletControleur extends HttpServlet {
 // --------------------------------------------------------------------------
 // idEcran    : identifiant de l'ecran reçu.
 // jsp        : jsp a afficher (retournee par les methodes de Traitement.
-// choixAction : action choisie sur l'ecran d'accueil.
+// choixAction : action choisie sur l'ecran .
 // --------------------------------------------------------------------------
         Integer idEcran;
         String jsp = null;
@@ -116,7 +116,7 @@ public class ServletControleur extends HttpServlet {
                     {
                         if (choixAction.compareTo("Login") == 0)
                     {
-                        jsp = "/jspResponsable.jsp";
+                        jsp = "/jspLogin.jsp";
                     }
                     else
                     {
@@ -311,6 +311,21 @@ public class ServletControleur extends HttpServlet {
                     jsp = "/jspErreur.jsp";
                 }
                 break;
+                
+                 case 12:
+                choixAction = request.getParameter("choixAction");
+
+                if (choixAction.compareTo("Login") == 0)
+                {
+                    jsp = traitementAccueil.traitementLogin(request);
+                    
+                }
+                else
+                {
+                    jsp = "/jspErreur.jsp";
+                }
+                break;
+                
                 
                  default:
                 session = request.getSession();

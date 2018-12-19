@@ -8,6 +8,7 @@ package controller;
 
 import dao.CoursDAO;
 import dao.EvenementDAO;
+import dao.LoginDAO;
 import dao.OntLieuDAO;
 
 import divers.Colonne;
@@ -21,6 +22,7 @@ import tables.Coach;
 import tables.Cours;
 import tables.Evenement;
 import tables.Jour;
+import tables.Login;
 import tables.OntLieu;
 
 
@@ -146,49 +148,46 @@ public class TraitementAccueil
     }
   
     
-     /*    public String traitementListeOntLieu(HttpServletRequest request)
+public String traitementLogin(HttpServletRequest request)
     {
-        String jspRetour;
-        
-  
-        Vector<OntLieu> listeOntLieu;
-        Vector<Colonne> listeColonnes;
+        String jspRetour = null;
+        String identifiant; 
+        String motDePasse;
         
         HttpSession session = request.getSession();
-        
+
         AccesBase accesBase;
-        OntLieuDAO ontLieuDAO;
-       
-// --------------------------------------------------------------------------
-// L'objet CoursDAO est une variable locale de la methode. Elle est creee a
-// chaque appel (et liberee a la fin). Il s'agit d'eviter le melange de
-// donnees entre plusieurs utilisateurs. En effet, la ServletControleur est
-// instanciée une fois. La classe TraitementAccueil une fois également. Si
-// l'objet CoursDAO etait declare en propriete de la classe
-// TraitementAccueil, elle serait commune a tous les utilisateurs. Or, un
-// objet CoursDAO contient une propriete de type JeuResultat qui est
-// modifiee a chaque lecture dans la base.
-// --------------------------------------------------------------------------
+        LoginDAO loginDAO;
+
+        identifiant= request.getParameter("identifiant");
+        motDePasse = request.getParameter("motDePasse");
+        Login login;
+        
+         login = new Login();
+         login.setIdentifiant(identifiant);
+         login.setMotDePasse(motDePasse);
         accesBase = new AccesBase(base);
+
         try
         {
             accesBase.getConnection();
-            ontLieuDAO = new OntLieuDAO(accesBase);
-         
-
+            loginDAO = new LoginDAO(accesBase);
+            
             try
             {
-              listeOntLieu = ontLieuDAO.lireListe();
+        
+       boolean status = loginDAO.validate(login);
                 
-               listeColonnes = ontLieuDAO.getListeColonnes();
-                
+          if(status)
+                 {
             
-
-                jspRetour = "/jspCours2.jsp";
-                session.setAttribute("listeOntLieu", listeOntLieu);
-             
-               session.setAttribute("listeColonnes", listeColonnes);
-            
+                jspRetour = "/jspResponsable.jsp";
+      
+                 }
+          else
+          {
+              jspRetour="/jspErreur.jsp";
+          }
             }
             finally
             {
@@ -197,12 +196,16 @@ public class TraitementAccueil
         }
         catch (SQLException e)
         {
-            
             jspRetour = "/jspErreur.jsp";
-            session.setAttribute("choixAction", "Cours");
+            session.setAttribute("message", e.getMessage());
+            //session.setAttribute("numeroContact", chaineNumeroContact);
+            //  session.setAttribute("choixAction", "modification");
         }
+
         return jspRetour;
-    }*/
+    }
+
+
     
 public String traitementPlanning(HttpServletRequest request)
     {
@@ -227,7 +230,7 @@ public String traitementPlanning(HttpServletRequest request)
             try
             {
                
-                //numeroContact = Integer.parseInt(chaineNumeroContact);
+                
                 jour = new Jour();
                 jour.setLibelle(libelleJour);
                 listeOntLieu = ontLieuDAO.lireListe(jour);

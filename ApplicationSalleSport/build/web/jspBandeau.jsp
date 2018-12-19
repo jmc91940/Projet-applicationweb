@@ -21,7 +21,7 @@
             <div>
             <ul>
                 <li>  <img src="images/Capture.PNG" width="250em" height="100em" alt=""/> </li>
-                <li > <a name= "choixAction" value = "Cours" href="ServletControleur?idEcran=1&choixAction=Cours">Cours</a></li>
+                <li> <a name= "choixAction" value = "Cours" href="ServletControleur?idEcran=1&choixAction=Cours">Cours</a></li>
                 <li> <a  name= "choixAction" value = "Evenement" href="ServletControleur?idEcran=1&choixAction=Evenement">Evenements</a></li>
                 <li> <a href="">Contact</a></li>
              <div id="connect">
@@ -30,11 +30,6 @@
              </ul>
            
             </div>  
-            
-                      
-                        
-                    
-            
         </div>
     </body>
 </html>

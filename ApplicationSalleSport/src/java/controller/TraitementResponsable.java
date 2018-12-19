@@ -210,61 +210,61 @@ public class TraitementResponsable
         }
         return jspRetour;
     }
-      public String traitementListeAdherents(HttpServletRequest request)
-    {
-        String jspRetour;
-        
-  
-       Adherent adherent;
-        
-        HttpSession session = request.getSession();
-        
-        AccesBase accesBase;
-        AdherentDAO adherentDAO;
-       
-// --------------------------------------------------------------------------
-// L'objet CoursDAO est une variable locale de la methode. Elle est creee a
-// chaque appel (et liberee a la fin). Il s'agit d'eviter le melange de
-// donnees entre plusieurs utilisateurs. En effet, la ServletControleur est
-// instanciée une fois. La classe TraitementAccueil une fois également. Si
-// l'objet CoursDAO etait declare en propriete de la classe
-// TraitementAccueil, elle serait commune a tous les utilisateurs. Or, un
-// objet CoursDAO contient une propriete de type JeuResultat qui est
-// modifiee a chaque lecture dans la base.
-// --------------------------------------------------------------------------
-        accesBase = new AccesBase(base);
-        try
-        {
-            accesBase.getConnection();
-        adherentDAO = new AdherentDAO(accesBase);
-         
-
-            try
-            {
-             
-                adherent = new Adherent();
-            
-
-                jspRetour = "/jspResponsableAdherentAjouter.jsp";
-                session.setAttribute("adherent", adherent);
-             
-           
-            
-            }
-            finally
-            {
-                accesBase.closeConnection();
-            }
-        }
-        catch (SQLException e)
-        {
-            
-            jspRetour = "/jspErreur.jsp";
-            /*   session.setAttribute("numeroContact", "");
-            session.setAttribute("choixAction", "Cours");*/
-        }
-        return jspRetour;
-    }
+//      public String traitementListeAdherents(HttpServletRequest request)
+//    {
+//        String jspRetour;
+//        
+//  
+//       Adherent adherent;
+//        
+//        HttpSession session = request.getSession();
+//        
+//        AccesBase accesBase;
+//        AdherentDAO adherentDAO;
+//       
+//// --------------------------------------------------------------------------
+//// L'objet CoursDAO est une variable locale de la methode. Elle est creee a
+//// chaque appel (et liberee a la fin). Il s'agit d'eviter le melange de
+//// donnees entre plusieurs utilisateurs. En effet, la ServletControleur est
+//// instanciée une fois. La classe TraitementAccueil une fois également. Si
+//// l'objet CoursDAO etait declare en propriete de la classe
+//// TraitementAccueil, elle serait commune a tous les utilisateurs. Or, un
+//// objet CoursDAO contient une propriete de type JeuResultat qui est
+//// modifiee a chaque lecture dans la base.
+//// --------------------------------------------------------------------------
+//        accesBase = new AccesBase(base);
+//        try
+//        {
+//            accesBase.getConnection();
+//        adherentDAO = new AdherentDAO(accesBase);
+//         
+//
+//            try
+//            {
+//             
+//                adherent = new Adherent();
+//            
+//
+//                jspRetour = "/jspResponsableAdherentAjouter.jsp";
+//                session.setAttribute("adherent", adherent);
+//             
+//           
+//            
+//            }
+//            finally
+//            {
+//                accesBase.closeConnection();
+//            }
+//        }
+//        catch (SQLException e)
+//        {
+//            
+//            jspRetour = "/jspErreur.jsp";
+//            /*   session.setAttribute("numeroContact", "");
+//            session.setAttribute("choixAction", "Cours");*/
+//        }
+//        return jspRetour;
+//    }
 
     public String traitementModifAdherent(HttpServletRequest request)
     {
